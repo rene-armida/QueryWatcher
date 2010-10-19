@@ -1,0 +1,11 @@
+DEPENDENCIES
+
+BeDC - available via HaikuWare:
+	http://haikuware.com/directory/view-details/development/debugging/bedc 
+	Must hack BeDC.h to change BeDC::SendMessage's first arg to 
+	be 'const char*' from 'const char*'.
+		
+cppunit - 1.12.1
+	$ ./configure --build=i586-pc-haiku --prefix=/boot/common
+	$ make
+	$ make install
