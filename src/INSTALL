@@ -6,6 +6,6 @@ BeDC - available via HaikuWare:
 	be 'const char*' from 'const char*'.
 		
 cppunit - 1.12.1
-	$ ./configure --build=i586-pc-haiku --prefix=/boot/common
+	$ CXXFLAGS="-g -DDEBUG" ./configure --build=i586-pc-haiku --prefix=/boot/common
 	$ make
 	$ make install

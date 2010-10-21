@@ -12,10 +12,20 @@ void TestSettings::testEmptyQueries()
 {
 	Settings settings;
 	// empty Settings object should not have any queries
-	CPPUNIT_ASSERT_EQUAL(0, settings.countQueries());
+	CPPUNIT_ASSERT_EQUAL((int32)0, settings.countQueries());
 
 	// trying to get a query should cause an exception
-	CPPUNIT_ASSERT_THROW(settings.getQuery(0), invalid_argument);
+	//CPPUNIT_ASSERT_THROW(settings.getQuery(0), invalid_argument);
+	bool found = false;
+	try {
+		settings.getQuery(0);
+	}
+	catch(invalid_argument exc) {
+		found = true;
+	}
+	if(!found) {
+		CPPUNIT_FAIL("what happened?");
+	}
 }
 
 TestSuite* TestSettings::suite() 

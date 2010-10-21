@@ -2,6 +2,7 @@
 #define SETTINGS_H
 
 #include <Archivable.h>
+#include <List.h>
 
 
 /**
@@ -12,8 +13,13 @@
 class Settings : public BArchivable
 {
 public:
-	int countQueries() const;
+	Settings();
+	~Settings();
+	int32 countQueries() const;
 	const char* getQuery(int idx) const;
+	
+private:
+	BList fQueries;
 };
 
 #endif
